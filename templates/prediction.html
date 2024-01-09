@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction </title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://www.cropin.com/hs-fs/hubfs/kharif-crop.jpg?width=880&height=661&name=kharif-crop.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(5px);           
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            width: 200px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .brief {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crop Prediction </h1>
+    </header>
+
+    <section>
+        <form action = '/prediction' method="post">
+            <label for="nitrogen">Nitrogen:</label>
+            <input type="number" id="nitrogen" name="nitrogen" required>
+
+            <label for="phosphorus">Phosphorus:</label>
+            <input type="number" id="phosphorus" name="phosphorus" required>
+
+            <label for="potassium">Potassium:</label>
+            <input type="number" id="potassium" name="potassium" required>
+
+            <label for="temperature">Temperature:</label>
+            <input type="number" id="temperature" name="temperature" required>
+
+            <label for="humidity">Humidity:</label>
+            <input type="number" id="humidity" name="humidity" required>
+
+            <label for="ph">pH:</label>
+            <input type="number" id="ph" name="ph" step="0.1" required>
+
+            <label for="rainfall">Rainfall:</label>
+            <input type="number" id="rainfall" name="rainfall" step="0.1" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <p class="brief">Enter the data for Nitrogen, Phosphorus, Potassium
